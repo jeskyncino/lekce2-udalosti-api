@@ -1,5 +1,3 @@
-//let odstavec = document.querySelector('p');
-
 function ztucni(odstavec){
     odstavec.target.style.fontWeight = "bold";
 }
@@ -11,16 +9,21 @@ function odtucni(odstavec){
 function zcervena(element){
     let toRed = document.querySelector(element) ;
     toRed.classList.toggle("barva");
+    let buttRed = document.querySelector("#pali");
+    if (buttRed.innerHTML === "Zčervená po kliknutí") {
+        buttRed.innerHTML = "Zčerná po kliknutí";
+     } else {
+     buttRed.innerHTML = "Zčervená po kliknutí";
+    }
 }
 
 
 function zvetsi(element){
-    let currSize = document.querySelector(element).style.fontSize ;
-
+    let text = document.querySelector(element);
+    let textSize = (window.getComputedStyle(text)).getPropertyValue('font-size');
+    let newSize = "calc(" + textSize + " " + "+ 1px)";
+    text.style.fontSize = newSize;
     } 
-    
-
-//@param {string} elementA
 
 function prehraj(elementA) {
    let audio = document.querySelector(elementA) ;
