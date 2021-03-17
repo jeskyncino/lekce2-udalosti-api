@@ -8,18 +8,18 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	
+	<p id="palindrom" onmouseover="ztucni(event)" onmouseout="odtucni(event)">V elipse spí lev</p> <br><br>
+	<button onclick="zcervena('#palindrom')">Červený po kliknutí</button>
+	<button onclick="zvetsi('#palindrom')">Zvětší po kliknutí</button>
+	<!---->
+	<br>
 
-	<h1>Změna tříd, události</h1>
+	<audio id="pisen" src="audio/dingdingdang.mp3" preload="auto"></audio>
+	<button onclick="prehraj('#pisen')">Přehraj písničku</button>
+	<button onclick="stopni('#pisen')">Stopni písničku</button>
 
-	<div class="ctverecek zluty"></div>
-
-	<div class="ctverecek zeleny"></div>
-
-	<img class="obrazek" src="obrazky/kocka.jpg">
-
-	<button class="tlacitko">Čudlajs</button>
-
-	<audio src="audio/dingdingdang.mp3" preload="auto"></audio>
+	<script src="main.js"></script>
 
 </body>
 </html>
