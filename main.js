@@ -1,15 +1,15 @@
-function ztucni(odstavec){
+function makeBold(odstavec){
     odstavec.target.style.fontWeight = "bold";
 }
 
-function odtucni(odstavec){
+function removeBold(odstavec){
     odstavec.target.style.fontWeight = "normal";
 }
 
-function zcervena(element){
+function makeRed(element){
     let toRed = document.querySelector(element) ;
-    toRed.classList.toggle("barva");
-    let buttRed = document.querySelector("#pali");
+    toRed.classList.toggle("make-red");
+    let buttRed = document.querySelector("#makeRed");
     if (buttRed.innerHTML === "Zčervená po kliknutí") {
         buttRed.innerHTML = "Zčerná po kliknutí";
      } else {
@@ -17,20 +17,59 @@ function zcervena(element){
     }
 }
 
-
-function zvetsi(element){
+function makeBigger(element){
     let text = document.querySelector(element);
     let textSize = (window.getComputedStyle(text)).getPropertyValue('font-size');
-    let newSize = "calc(" + textSize + " " + "+ 1px)";
+  
+    /* VARIANTA č.1
+      let newSize = "calc(" + textSize + " " + "+ 1px)";
+    * text.style.fontSize = newSize;
+    */
+    
+      // Varianta č.2
+    let newSize = parseInt(textSize) + 1 +"px";
     text.style.fontSize = newSize;
     } 
 
-function prehraj(elementA) {
-   let audio = document.querySelector(elementA) ;
+function play(element) {
+   let audio = document.querySelector(element) ;
    audio.play();
 }
 
-function stopni(elementB) {
-    let audio = document.querySelector(elementB) ;
+function pause(element) {
+    let audio = document.querySelector(element) ;
     audio.pause();
  }
+
+function stop (element) {
+    let audio = document.querySelector(element) ;
+    audio.pause();
+ }
+
+function volume0(element){
+    let audio = document.querySelector(element) ;
+    audio.volume = 0;
+}
+
+function volume05 (element){
+    let audio = document.querySelector(element) ;
+    audio.volume = 0.5;
+}
+
+function volume1 (element) {
+    let audio = document.querySelector(element) ;
+    audio.volume = 1;
+}
+
+function preload (elementG) {
+    let audio = document.querySelector(elementG) ;
+    audio.load();
+    audio.play();
+}
+
+function displayName(element){
+    let insertName = document.querySelector(element).innerHTML;
+    let placeOfName = document.querySelector('#nameOfSong');
+    placeOfName.innerHTML = insertName;
+}
+

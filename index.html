@@ -12,19 +12,23 @@
 </head>
 
 <body>
-	<div>
-		<p id="palindrom" onmouseover="ztucni(event)" onmouseout="odtucni(event)">V elipse spí lev</p> <br><br>
-		<button id="pali" onclick="zcervena('#palindrom')">Zčervená po kliknutí</button>
-		<button onclick="zvetsi('#palindrom')">Zvětší po kliknutí</button>
+	<div class="palindrome">
+		<p id="palindrome" onmouseover="makeBold(event)" onmouseout="removeBold(event)">V elipse spí lev</p> <br><br>
+		<button id="makeRed" onclick="makeRed('#palindrome')">Zčervená po kliknutí</button>
+		<button onclick="makeBigger('#palindrome')">Zvětší po kliknutí</button>
 	</div>
 	<br>
-	<div>
-		<audio id="pisen" src="audio/dingdingdang.mp3" preload="auto"></audio>
-
-		<button onclick="prehraj('#pisen')">►</button>
-		<button onclick="stopni('#pisen')">║</button>
-
+	<div class="player">
+		<audio id="song" src="audio/dingdingdang.mp3" preload="auto">Ding Ding Dang</audio>
+		<pre>Právě se přehrává: <span id="nameOfSong"></span></pre>
+		<button onclick="play('#song')">►</button>
+		<button onclick="pause('#song')">║</button>
+		<button onclick="volume0('#song')">potichu</button>
+		<button onclick="volume05('#song')">napůl</button>
+		<button onclick="volume1('#song')">naplno</button>
+		<button onclick="preload('#song')">Vrátit na začátek</button>
 		<script src="main.js"></script>
+		<script>displayName('#song')</script>
 	</div>
 </body>
 
