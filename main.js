@@ -26,11 +26,13 @@ function makeBigger(element){
     * text.style.fontSize = newSize;
     */
     
-      // Varianta č.2
+    // VARIANTA č.2
     let newSize = parseInt(textSize) + 1 +"px";
     text.style.fontSize = newSize;
     } 
 
+
+    // ↓ V tomto případě myslím stačí jedna globální proměná "audio", ale takto je to asi universálnější. :-) 
 function play(element) {
    let audio = document.querySelector(element) ;
    audio.play();
